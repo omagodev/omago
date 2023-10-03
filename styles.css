@@ -1,0 +1,181 @@
+/* Estilos base */
+html,
+body {
+  background: linear-gradient(to top, rgb(133, 65, 222), #000);
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#container {
+  transform-style: preserve-3d;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  transform: translateX(-50px) rotateY(27deg) rotateZ(27deg);
+  animation: shake infinite 2s;
+}
+
+/* Estilos do Mago */
+#mage {
+  width: 20vw;
+  height: 20vh;
+  left: 250px;
+  position: relative;
+  top: 190px;
+  transform-style: preserve-3d;
+}
+
+/* Estilos para o Chapéu do Mago */
+.hat {
+  position: absolute;
+  top: -32px;
+  left: 70%;
+  transform: translateX(-50%);
+  scale: 1.2;
+}
+
+.hat-base {
+  width: 220px;
+  height: 30px;
+  background-color: #333;
+  border-radius: 511px 357px 53px 23px;
+  position: relative;
+}
+
+.hat-top {
+  width: 120px;
+  height: 168px;
+  background-color: #333;
+  border-radius: 139px 20px 20px 3px;
+  position: absolute;
+  top: -130px;
+  left: 60%;
+  transform: translateX(-50px) rotateZ(27deg);
+}
+
+/* Faces do Mago */
+.face {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+}
+
+.face.front {
+  background-color: #cfe013;
+  transform: translateZ(98px);
+}
+
+.face.left {
+  background-color: #138be0;
+  transform: rotateY(90deg);
+  left: -100px;
+}
+
+.face.right {
+  background-color: #3787c0;
+  transform: rotateY(90deg);
+  left: 100px;
+}
+
+.face.back {
+  background-color: #086aa2;
+  transform: translateZ(-98px);
+}
+
+.face.top {
+  background-color: #34a208;
+  transform: rotateX(90deg);
+  top: -98px;
+}
+
+/* Olhos e Boca do Mago */
+.eyes {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.eyes.left {
+  left: 20px;
+}
+.eyes.right {
+  left: 100px;
+}
+
+.iris {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+  animation: moveEyes infinite 2s;
+}
+
+.mouth {
+  width: 100px;
+  height: 20px;
+  background-color: #fff;
+  top: 120px;
+  left: 48px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.tongue {
+  width: 60px;
+  height: 10px;
+  left: 20px;
+  top: 10px;
+  position: absolute;
+  background-color: #9f1919;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.mouthSky {
+  width: 100px;
+  height: 20px;
+  position: relative;
+  background-color: #000;
+  border-radius: 10px 10px 0px 0px;
+}
+
+/* Chão */
+#floor {
+  width: 80vw;
+  height: 80vh;
+  background-color: #000;
+  border: 1px solid #fff;
+  transform: rotateX(89deg);
+  position: relative;
+  top: -150px;
+}
+
+/* Animações */
+@keyframes moveEyes {
+  0%,
+  100% {
+    top: 20px;
+  }
+  50% {
+    top: 15px;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: rotateZ(-20deg) rotateX(-20deg) rotateY(-20deg);
+  }
+  50% {
+    transform: rotateZ(20deg) rotateX(20deg) rotateY(20deg);
+  }
+}
